@@ -4,8 +4,10 @@ const logger = require('morgan')
 const cors = require('cors')
 const formData = require('express-form-data')
 
+
 const profilesRouter = require('./routes/profiles.js')
 const authRouter = require('./routes/auth.js')
+const quotesRouter = require('./routes/quotes.js')
 
 const app = express()
 
@@ -16,6 +18,7 @@ app.use(formData.parse())
 
 app.use('/api/profiles', profilesRouter)
 app.use('/api/auth', authRouter)
+app.use('/api/quotes', quotesRouter)
 
 app.use(function (req, res, next) {
   res.status(404).json({ err: 'Not found' })
