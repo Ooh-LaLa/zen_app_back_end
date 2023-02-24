@@ -18,13 +18,18 @@ async function deleteZenQuote(req, res) {
   try {
     console.log("TEST", req);
     const deleteQuote = await Zen_Quote.destroy(
-      { where: { id: req.quote.id } }
+      { where: { id: req.params.id } }
     )
     res.status(200).json(deleteQuote) // Expected: 1
   } catch (error) {
     res.status(500).json({ err: error })
   }
 }
+
+
+
+
+
 
 
 
