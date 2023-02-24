@@ -29,7 +29,7 @@ async function deleteZenQuote(req, res) {
 
 async function index(req, res) {
   try {
-    const quotes = await Quotes.findAll()
+    const quotes = await quotes.findAll()
     res.json(quotes)
   } catch (error) {
     console.log(error)
