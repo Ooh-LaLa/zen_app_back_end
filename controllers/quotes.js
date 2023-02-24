@@ -13,6 +13,25 @@ async function createZenQuote(req, res) {
   }
 }
 
+
+async function deleteZenQuote(req, res) {
+  try {
+    console.log("TEST", req);
+    const deleteQuote = await Zen_Quote.destroy(
+      { where: { id: req.quote.id } }
+    )
+    res.status(200).json(deleteQuote) // Expected: 1
+  } catch (error) {
+    res.status(500).json({ err: error })
+  }
+}
+
+
+
+
+
+
+
 module.exports = {
-  createZenQuote
+  createZenQuote, deleteZenQuote
 }
