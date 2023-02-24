@@ -11,6 +11,9 @@ const { decodeUserFromToken, checkAuth } = middleware
 // ========= Protected Routes ========= 
 router.use(decodeUserFromToken)
 router.post('/', checkAuth, quotesCtrl.createZenQuote)
+router.get('/', quotesCtrl.index)
+
+router.delete('/', quotesCtrl.deleteZenQuote)
 
 
 module.exports = router

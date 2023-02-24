@@ -27,6 +27,16 @@ async function deleteZenQuote(req, res) {
 }
 
 
+async function index(req, res) {
+  try {
+    const quotes = await Quotes.findAll()
+    res.json(quotes)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ err: error })
+  }
+}
+
 
 
 
@@ -38,5 +48,5 @@ async function deleteZenQuote(req, res) {
 
 
 module.exports = {
-  createZenQuote, deleteZenQuote
+  createZenQuote, deleteZenQuote, index
 }
