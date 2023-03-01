@@ -57,7 +57,7 @@ const update = async (req, res) => {
 async function myQuotes(req, res) {
   try {
     const quotes = await Zen_Quote.findAll({ where: { profileId: req.user.profile.id } })
-    console.log(quotes);
+    // console.log(quotes);
     res.json(quotes)
   } catch (error) {
     console.log(error)

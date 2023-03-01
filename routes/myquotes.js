@@ -13,4 +13,10 @@ router.use(decodeUserFromToken)
 
 router.get('/', checkAuth, quotesCtrl.myQuotes)
 
+router.delete('/:id', checkAuth, quotesCtrl.deleteZenQuote)
+
+router.put('/:id', checkAuth, quotesCtrl.update)
+
+
+
 module.exports = router

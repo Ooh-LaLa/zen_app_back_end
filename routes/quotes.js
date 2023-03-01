@@ -15,9 +15,7 @@ router.post('/', checkAuth, quotesCtrl.createZenQuote)
 
 router.get('/', quotesCtrl.index)
 
-router.delete('/', checkAuth, quotesCtrl.deleteZenQuote)
 
-router.put('/:id', checkAuth, quotesCtrl.update)
 
 
 
